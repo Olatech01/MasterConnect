@@ -18,6 +18,7 @@ const EmailVerification = () => {
           inputStyle="border h-[40px] px-5 rounded-md text-black"
           containerStyle='flex gap-3'
           // renderSeparator={<span>-</span>}
+          inputType='number'
           renderInput={(props) => <input {...props} />}
         />
         <button className='bg-[#3C4E70] text-white h-[40px] w-[200px] rounded-full'>Verify email</button>

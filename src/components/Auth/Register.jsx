@@ -87,7 +87,7 @@ const Register = () => {
     return (
         <div className='w-full flex'>
             <div className='w-full flex h-screen flex-col gap-4 items-center justify-center px-[4rem]'>
-                <h2 className='text-[20px] font-semibold'>Create Your Account</h2>
+                <h2 className='text-[40px] font-semibold'>Create Your Account</h2>
                 <form onSubmit={handleSubmit} className='w-full flex flex-col gap-3'>
                     <div className='flex flex-col gap-2'>
                         <label className='text-[16px] font-medium'>Username</label>

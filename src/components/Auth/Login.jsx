@@ -3,6 +3,9 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 import { LuEyeOff, LuEye } from "react-icons/lu";
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebookSquare } from "react-icons/fa";
+
 
 const Login = () => {
   const [password, setPassword] = useState('');
@@ -48,7 +51,18 @@ const Login = () => {
       <div className='w-full flex h-screen flex-col gap-4 items-center justify-center px-[4rem]'>
         <h1 className='text-[20px] font-semibold'>Log into Your Account</h1>
         <p className='text-[20px] font-normal'>Welcome Back ! Select a method to Log In</p>
-        <form onSubmit={handleSubmit} className='w-full flex flex-col gap-3'>
+        <div className='flex gap-10'>
+          <button className='flex items-center border-2 shadow-lg h-[40px] px-4'>
+            <FcGoogle />
+            <span className='ml-[2px] text-[14px] font-semibold'>Sign in with Google</span>
+          </button>
+          <button className='flex items-center border-2 shadow-lg h-[40px] px-4'>
+            <FaFacebookSquare />
+            <span className='ml-[2px] text-[14px] font-semibold'>Sign in with Facebook</span>
+          </button>
+        </div>
+        <p>or continue with email</p>
+        <form onSubmit={handleSubmit} className='w-full flex flex-col gap-5'>
           <div className='flex flex-col gap-2'>
             <label className='text-[16px] font-semibold'>Email</label>
             <input
@@ -113,6 +127,7 @@ const Login = () => {
             }
           </button>
         </form>
+        <p className='text-[14px] font-medium'>Don’t have an account? <span className='text-[#0057FF]'>Create New One</span></p>
       </div>
       <div className='w-full h-screen'>
         <Image

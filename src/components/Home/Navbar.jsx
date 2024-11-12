@@ -1,5 +1,6 @@
 "use client"
 import Image from 'next/image'
+import Link from 'next/link';
 import React, { useState } from 'react'
 import { MdMenu, MdClose } from "react-icons/md";
 
@@ -11,7 +12,7 @@ const Navbar = () => {
     return (
         <div className='flex justify-between items-center py-2 px-7 bg-[#EDF1FF]'>
             <div>
-                <Image height={100} width={200} src={'/logo.svg'} alt="Not found"/>
+                <Image height={100} width={200} src={'/logo.svg'} alt="Not found" />
             </div>
             <ul className='flex gap-5 text-[21px] font-semibold sm:hidden'>
                 <li>Home</li>
@@ -20,8 +21,12 @@ const Navbar = () => {
                 <li>Announcements</li>
             </ul>
             <div className='flex gap-6 sm:hidden'>
-                <button className='w-[178px] h-[45px] rounded-full border-2 border-[#3C4E70] text-[20px] font-semibold'>Login</button>
-                <button className='w-[178px] bg-[#3C4E70] h-[45px] rounded-full text-[#FFFFFF] text-[20px] font-semibold'>Register</button>
+                <Link href={"/auth/login"}>
+                    <button className='w-[178px] h-[45px] rounded-full border-2 border-[#3C4E70] text-[20px] font-semibold'>Login</button>
+                </Link>
+                <Link href={"/auth/register"}>
+                    <button className='w-[178px] bg-[#3C4E70] h-[45px] rounded-full text-[#FFFFFF] text-[20px] font-semibold'>Register</button>
+                </Link>
             </div>
             <div className='lg:hidden flex gap-3 items-center'>
                 <button onClick={toggleMenu} className='text-3xl'>

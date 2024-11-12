@@ -9,9 +9,12 @@ const AppWrapper = ({children}) => {
     const shouldHideNavbarAndFooter = [
         "/auth/register",
         "/auth/login",
+        "/auth/forget",
+        "/auth/otpVerification",
+        "/auth/newpassword",
+        "/recruiter",
+        "/recruiter/post",
         "/admin",
-        "/admin/products",
-        "/admin/settings"
     ].includes(pathname);
     return (
         <div className='flex flex-col gap-5'>

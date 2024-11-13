@@ -10,7 +10,7 @@ const RecruiterLayout = ({children}) => {
         setIsSidebarOpen(!isSidebarOpen);
     };
   return (
-    <div className="flex bg-[]">
+    <div className="flex bg-[#ffffff]/50">
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar}/>
         <div className="flex-1 flex flex-col min-h-screen ml-[18rem] md:ml-0 sm:ml-0">
             <Header toggleSidebar={toggleSidebar}/>

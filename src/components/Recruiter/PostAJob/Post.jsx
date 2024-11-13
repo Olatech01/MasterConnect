@@ -5,7 +5,7 @@ const Post = () => {
         <div className='flex flex-col gap-7'>
             <h2 className='text-[40px] font-bold'>Post A Job</h2>
             <form className='flex flex-col gap-4'>
-                <div className='grid grid-cols-2 gap-4'>
+                <div className='grid grid-cols-2 sm:grid-cols-1 gap-4'>
                     <div className='flex flex-col gap-2'>
                         <label className='text-[16px] font-semibold'>Job Title</label>
                         <input
@@ -47,7 +47,7 @@ const Post = () => {
                         className='rounded-lg min-h-[35vh] shadow-lg border-2 outline-none pl-3 pt-3 w-full'
                     ></textarea>
                 </div>
-                <div className='grid grid-cols-2 gap-[5rem]'>
+                <div className='grid grid-cols-2 sm:grid-cols-1 sm:gap-[1rem] gap-[5rem]'>
                     <div className='flex flex-col gap-4'>
                         <div className='flex flex-col gap-4'>
                             <label className='text-[16px] font-semibold'>Internship Start date:</label>
@@ -107,7 +107,7 @@ const Post = () => {
                                     <p className='text-[14px] font-normal'>Unpaid</p>
                                 </div>
                             </div>
-                            <div className='flex gap-1'>
+                            <div className='flex gap-1 sm:flex-col sm:gap-2'>
                                 <select className='shadow-lg border-2 h-[40px] w-full  rounded-md outline-none'>
                                     <option>Select Currency</option>
                                     <option>$</option>

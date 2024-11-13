@@ -6,49 +6,72 @@ import { LuEyeOff, LuEye } from "react-icons/lu";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare } from "react-icons/fa";
 import Link from 'next/link';
-
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const Login = () => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [agreed, setAgreed] = useState(false)
-
+  const router = useRouter();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-
   const validateInfo = () => {
     if (!email || !password) {
-      toast.error("All fields are required")
+      toast.error("All fields are required");
       return false;
     }
-
     return true;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateInfo()) {
-      setIsLoading(true);
-      setTimeout(() => {
-        setIsLoading(false);
-        toast.success('Login Successfully');
-      }, 2000);
-    }
+    if (!validateInfo()) return;
 
-  }
+    setIsLoading(true);
+    const formData = { email, password };
+
+    try {
+        const response = await axios.post('https://masterconnect-backend.onrender.com/api/login', formData, {
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (response.status === 200 || response.status === 201) {
+            const { userType } = response.data.user;
+
+            if (userType === 'recruiter') {
+                toast.success("Login Successful!");
+                setTimeout(() => router.push('/recruiter'), 2000);
+            } else if (userType === 'admin') {
+                toast.success("Login Successful!");
+                setTimeout(() => router.push('/admin'), 2000);
+            } else if (userType === 'candidate') {
+                toast.success("Login Successful!");
+                setTimeout(() => router.push('/candidate'), 2000);
+            } else {
+                toast.error("Invalid user type. Please contact support.");
+            }
+        } else {
+            toast.error("Invalid login credentials.");
+        }
+    } catch (error) {
+        toast.error("An error occurred during login. Please try again.");
+    } finally {
+        setIsLoading(false);
+    }
+};
 
 
   return (
     <div className='w-full flex bg-[#B1ADAD]'>
-      <div className='w-full flex h-screen  items-center justify-center px-[4rem]'>
+      <div className='w-full flex h-screen items-center justify-center px-[4rem]'>
         <div className='flex-col gap-4 flex items-center justify-center bg-[#FFFFFF] rounded-lg w-[700px] min-h-[600px]'>
           <h1 className='text-[20px] font-semibold'>Log into Your Account</h1>
-          <p className='text-[20px] font-normal'>Welcome Back ! Select a method to Log In</p>
+          <p className='text-[20px] font-normal'>Welcome Back! Select a method to Log In</p>
           <div className='flex gap-10'>
             <button className='flex items-center border-2 shadow-lg h-[40px] px-4'>
               <FcGoogle />
@@ -78,14 +101,10 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder='Verify Password'
-                  className=' outline-none  w-full'
+                  placeholder='Enter your password'
+                  className='outline-none w-full'
                 />
-                <button
-                  onClick={togglePasswordVisibility}
-                  type="button"
-                  className="cursor-pointer"
-                >
+                <button onClick={togglePasswordVisibility} type="button" className="cursor-pointer">
                   {showPassword ? <LuEyeOff /> : <LuEye />}
                 </button>
               </div>
@@ -95,7 +114,7 @@ const Login = () => {
                 <input type='checkbox' className='w-4 h-4' />
                 <label className='text-[14px] font-semibold'>Remember Me</label>
               </div>
-              <Link href={"/auth/forget"}>
+              <Link href="/auth/forget">
                 <p className='text-[#0057FF]'>Forget password</p>
               </Link>
             </div>
@@ -104,30 +123,13 @@ const Login = () => {
               className='w-full h-[45px] flex items-center justify-center bg-[#3C4E70] rounded-lg text-[#FFFFFF] text-[18px] font-semibold'
             >
               {isLoading ? (
-                <svg
-                  className="animate-spin h-5 w-5 text-white"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  />
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-                  />
+                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                 </svg>
               ) : (
                 "Login"
-              )
-              }
+              )}
             </button>
           </form>
           <p className='text-[14px] font-medium'>Don’t have an account? <span className='text-[#0057FF]'>Create New One</span></p>
@@ -137,13 +139,13 @@ const Login = () => {
         <Image
           height={100}
           width={100}
-          src={"/auth.svg"}
+          src="/auth.svg"
           alt="Not found"
           className="w-full object-cover h-screen"
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

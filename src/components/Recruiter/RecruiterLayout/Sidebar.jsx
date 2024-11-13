@@ -1,11 +1,18 @@
 "use client"
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import { CiSettings, CiStar, CiShoppingCart } from "react-icons/ci";
-import { GoPeople } from "react-icons/go";
+import { RxActivityLog } from "react-icons/rx";
+import { TfiWrite } from "react-icons/tfi";
 import { IoGridOutline, IoBeakerOutline } from "react-icons/io5";
+import { LuMessageSquarePlus } from 'react-icons/lu';
 import { MdClose } from 'react-icons/md';
+import { HiRectangleStack } from "react-icons/hi2";
+import { GrAnnounce } from "react-icons/gr";
+
+
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
     const pathname = usePathname();
@@ -17,24 +24,29 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             path: '/recruiter'
         },
         {
-            icon: <IoBeakerOutline size={20} />,
-            title: 'Products',
+            icon: <HiRectangleStack size={20} />,
+            title: 'Hiring',
             path: '/admin/products'
         },
         {
-            icon: <CiShoppingCart size={20} />,
-            title: 'Orders',
+            icon: <RxActivityLog size={20} />,
+            title: 'Activities',
             path: '/admin/orders'
         },
         {
-            icon: <GoPeople size={20} />,
-            title: 'Customers',
-            path: '/admin/customers'
-        },
-        {
-            icon: <CiStar size={20} />,
+            icon: <TfiWrite size={20} />,
             title: 'Post a job',
             path: '/recruiter/post'
+        },
+        {
+            icon: <LuMessageSquarePlus size={20} />,
+            title: 'Message',
+            path: '/admin/message'
+        },
+        {
+            icon: <GrAnnounce size={20} />,
+            title: 'Announcement',
+            path: '/admin/message'
         },
         {
             icon: <CiSettings size={20} />,
@@ -47,7 +59,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         transition-transform duration-300 ease-in-out transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}
         lg:translate-x-0`}>
             <div className='flex items-center justify-between px-4 py-3 border-b border-gray-200'>
-                <h2 className='text-lg font-semibold'>Admin Panel</h2>
+                <Image height={100} width={200} src={"/logo.svg"} alt=''/>
                 <MdClose size={24} className='lg:hidden sm:block' onClick={toggleSidebar} />
             </div>
             <ul className='flex flex-col gap-[0.5rem] mt-3'>

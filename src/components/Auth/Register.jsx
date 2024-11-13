@@ -65,7 +65,7 @@ const Register = () => {
             const formData = { username, userType, email, password, city, state }
 
             try {
-                const response = await axios.post('https://jobpilot-backend-1.onrender.com/api/register', formData, {
+                const response = await axios.post('https://masterconnect-backend.onrender.com/api/register', formData, {
                     headers: { 'Content-Type': 'application/json' },
                 })
 
@@ -231,7 +231,7 @@ const Register = () => {
                 />
             </div>
             {emailVerification && (
-                <EmailVerification show={emailVerification} onClose={() => setEmailVerification(false)} />
+                <EmailVerification show={emailVerification} onClose={() => setEmailVerification(false)} email={email}/>
             )}
         </div>
     )

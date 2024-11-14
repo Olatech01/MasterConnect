@@ -14,6 +14,7 @@ const AppWrapper = ({children}) => {
         "/auth/newpassword",
         "/recruiter",
         "/recruiter/post",
+        "/recruiter/hiring",
         "/admin",
     ].includes(pathname);
     return (

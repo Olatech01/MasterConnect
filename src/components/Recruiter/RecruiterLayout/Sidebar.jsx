@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
-import { CiSettings, CiStar, CiShoppingCart } from "react-icons/ci";
+import { CiSettings, CiStar, CiShoppingCart, CiBookmark } from "react-icons/ci";
 import { RxActivityLog } from "react-icons/rx";
 import { TfiWrite } from "react-icons/tfi";
 import { IoGridOutline, IoBeakerOutline } from "react-icons/io5";
@@ -26,7 +26,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         {
             icon: <HiRectangleStack size={20} />,
             title: 'Hiring',
-            path: '/admin/products'
+            path: '/recruiter/hiring'
+        },
+        {
+            icon: <CiBookmark size={20} />,
+            title: 'Bookmarks',
+            path: '/admin/orders'
         },
         {
             icon: <RxActivityLog size={20} />,

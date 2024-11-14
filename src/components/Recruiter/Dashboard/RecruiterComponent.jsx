@@ -3,11 +3,11 @@ import React from 'react'
 
 const RecruiterComponent = () => {
     return (
-        <div className='flex gap-[5rem] mt-5'>
+        <div className='flex gap-[5rem] mt-5 sm:flex-col sm:gap-[2rem]'>
             <div className='bg-[white] shadow-lg h-fit p-4 w-fit'>
                 <Image height={100} width={100} src={'/man.svg'} alt='' />
             </div>
-            <div className='flex flex-col gap-[2rem]'>
+            <div className='flex flex-col gap-[2rem] sm:gap-[1rem]'>
                 <div className='flex gap-4 items-center'>
                     <h2 className='text-[13px] font-medium'>Name:</h2>
                     <p className='text-[18px] font-semibold'>Ayanda Boluwatife</p>

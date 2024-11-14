@@ -17,11 +17,11 @@ const DashboardComponent = () => {
 
     return (
         <div className='flex flex-col gap-[2rem] mt-5'>
-            <div className='grid grid-cols-3 items-center'>
+            <div className='grid grid-cols-3 sm:grid-cols-1  sm:gap-5 items-center'>
                 <div className='bg-[white] shadow-lg p-4 w-fit'>
                     <Image height={100} width={100} src={'/dash.svg'} alt='' />
                 </div>
-                <div className='flex flex-col  gap-[1.5rem]'>
+                <div className='flex flex-col  gap-[1.5rem] sm:gap-[0.5rem]'>
                     <h2 className='text-[16px] font-semibold'>Linsible Technologies Pvt Ltd</h2>
                     <h2 className='text-[16px] font-semibold'>IT Industry</h2>
                     <h2 className='text-[16px] font-semibold'>Year Founded: 2019</h2>
@@ -50,7 +50,7 @@ const DashboardComponent = () => {
                         <p className='text-[14px] font-normal'>K. RAJARAMAN (WORKING PRESIDENTS),Flat No. 5, Victoria Garden, 106, J.N. Salai, Koyambedu, Chennai - 600107</p>
                     </div>
                 </div>
-                <div className='grid grid-cols-2'>
+                <div className='grid grid-cols-2 sm:grid-cols-1 sm:gap-3'>
                     <div className='flex flex-col gap-2'>
                         <h2 className='text-[18px] font-medium'>Official Website</h2>
                         <div className='flex items-center gap-3 pl-2'>

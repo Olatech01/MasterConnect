@@ -5,11 +5,11 @@ const GovernmentComponent = () => {
   return (
     <div className='flex flex-col gap-[2rem] mt-5'>
         <div className='flex flex-col gap-4'>
-            <div className='flex gap-4 items-center'>
+            <div className='flex gap-4 items-center sm:flex-col sm:items-start'>
                 <h2 className='text-[13px] font-medium'>Company Registration Number:</h2>
                 <p className='text-[18px] font-semibold'>12345646546546544</p>
             </div>
-            <div className='flex gap-4 items-center'>
+            <div className='flex gap-4 items-center sm:flex-col sm:items-start'>
                 <h2 className='text-[13px] font-medium'>Tax Identification Number:</h2>
                 <p className='text-[18px] font-semibold'>GSTIN12345646546546544</p>
             </div>

@@ -13,7 +13,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className="flex w-[55%] bg-[#FFFFFF]">
+      <div className="flex w-[55%] bg-[#FFFFFF] sm:w-full">
         <button
           onClick={() => handlerecruiter("dashboard")}
           className={`h-[48px] w-full rounded-tl-md bg-[#FFFFFF] ${activeComponent === "dashboard" ? "bg-[#F2F5FF] " : ""}`}

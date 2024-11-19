@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { IoIosLogOut, IoMdNotifications } from "react-icons/io";
 import { TiArrowSortedDown } from "react-icons/ti";
@@ -10,12 +10,17 @@ import { IoIosHelpCircle } from "react-icons/io";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { FaBookmark } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
+import { UserContext } from '@/components/libs/UserContext';
+import { AuthContext } from '@/components/libs/AuthContext';
 
 
 
 
 const Header = ({ toggleSidebar }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const { user, logOut, userType } = useContext(AuthContext);
+
+    console.log(user);
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
@@ -30,8 +35,18 @@ const Header = ({ toggleSidebar }) => {
             <div className='flex gap-2 items-center relative'>
                 <IoMdNotifications size={24} />
                 <div className='flex flex-col items-end'>
-                    <h2 className='text-[18px] font-semibold'>Boluwatife</h2>
-                    <p className='text-[10px] font-medium items-end'>Recruiter</p>
+                    <h2 className='text-[18px] font-semibold'>
+                        {user ? (
+                            <div className="flex items-center gap-4">
+                                <p className="text-lg">{user?.username}</p>
+                            </div>
+                        ) : (
+                            <p>Please log in</p>
+                        )}
+                    </h2>
+                    <div className='text-[10px] font-medium items-end'>
+                            <p>({userType?.userType})</p>
+                    </div>
                 </div>
                 <div onClick={toggleDropdown} className='flex items-center gap-2'>
                     <Image

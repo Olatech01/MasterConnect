@@ -29,11 +29,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             path: '/recruiter/hiring'
         },
         {
-            icon: <CiBookmark size={20} />,
-            title: 'Bookmarks',
-            path: '/admin/orders'
-        },
-        {
             icon: <RxActivityLog size={20} />,
             title: 'Activities',
             path: '/admin/orders'
@@ -56,7 +51,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         {
             icon: <CiSettings size={20} />,
             title: 'Settings',
-            path: '/admin/settings'
+            path: '/recruiter/settings'
         }
     ];
     return (

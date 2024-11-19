@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { toast } from 'react-toastify'
 import { LuEyeOff, LuEye } from "react-icons/lu";
 import { FcGoogle } from "react-icons/fc";
@@ -8,8 +8,12 @@ import { FaFacebookSquare } from "react-icons/fa";
 import Link from 'next/link';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { setCookie } from "cookies-next";
+import { AuthContext } from '../libs/AuthContext';
 
 const Login = () => {
+  const { logIn } = useContext(AuthContext);
+
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -36,34 +40,37 @@ const Login = () => {
     const formData = { email, password };
 
     try {
-        const response = await axios.post('https://masterconnect-backend.onrender.com/api/login', formData, {
-            headers: { 'Content-Type': 'application/json' },
-        });
+      const response = await axios.post(
+        'https://masterconnect-backend.onrender.com/api/login',
+        formData,
+        { headers: { 'Content-Type': 'application/json' } }
+      );
 
-        if (response.status === 200 || response.status === 201) {
-            const { userType } = response.data.user;
+      if (response.status === 200 || response.status === 201) {
+        const { userType, username, token } = response.data.user;
 
-            if (userType === 'recruiter') {
-                toast.success("Login Successful!");
-                setTimeout(() => router.push('/recruiter'), 2000);
-            } else if (userType === 'admin') {
-                toast.success("Login Successful!");
-                setTimeout(() => router.push('/admin'), 2000);
-            } else if (userType === 'candidate') {
-                toast.success("Login Successful!");
-                setTimeout(() => router.push('/candidate'), 2000);
-            } else {
-                toast.error("Invalid user type. Please contact support.");
-            }
-        } else {
-            toast.error("Invalid login credentials.");
-        }
+        logIn(token, username); 
+
+        toast.success("Login Successful!");
+
+        const redirectPath =
+          userType === 'recruiter'
+            ? '/recruiter'
+            : userType === 'admin'
+              ? '/admin'
+              : '/candidate';
+
+        setTimeout(() => router.push(redirectPath), 2000);
+      } else {
+        toast.error("Invalid login credentials.");
+      }
     } catch (error) {
-        toast.error("An error occurred during login. Please try again.");
+      toast.error("An error occurred during login. Please try again.");
     } finally {
-        setIsLoading(false);
+      setIsLoading(false);
     }
-};
+  };
+
 
 
   return (

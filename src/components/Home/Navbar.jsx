@@ -44,8 +44,12 @@ const Navbar = () => {
                         <li>Categories</li>
                         <li>Announcements</li>
                     </ul>
-                    <button className='w-[178px] h-[45px] rounded-full border-2 border-[#3C4E70] text-[20px] font-semibold'>Login</button>
-                    <button className='w-[178px] bg-[#3C4E70] h-[45px] rounded-full text-[#FFFFFF] text-[20px] font-semibold'>Register</button>
+                    <Link href={"/auth/login"}>
+                        <button className='w-[178px] h-[45px] rounded-full border-2 border-[#3C4E70] text-[20px] font-semibold'>Login</button>
+                    </Link>
+                    <Link href={"/auth/register"}>
+                        <button className='w-[178px] bg-[#3C4E70] h-[45px] rounded-full text-[#FFFFFF] text-[20px] font-semibold'>Register</button>
+                    </Link>
                 </div>
             )}
         </div>

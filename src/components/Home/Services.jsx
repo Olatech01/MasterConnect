@@ -11,7 +11,7 @@ const Services = () => {
                 </div>
                 <div className='px-[3rem] flex flex-col gap-4 sm:px-3'>
                     <div className='flex items-center justify-start gap-10 sm:flex-col-reverse'>
-                        <Image height={100} width={200} src={"/assess.svg"} className="w-full" />
+                        <Image height={100} width={200} src={"/assess.svg"} alt='' className="w-full" />
                         <div className='flex flex-col gap-[2rem] sm:gap-[0.5rem]'>
                             <h2 className='text-[40px] font-semibold sm:text-[30px]'>Test Assessments</h2>
                             <p className='text-[16px] font-medium w-[956px] sm:w-full'>
@@ -26,10 +26,10 @@ const Services = () => {
                                 We offer personalized career guidance, suggesting the most suitable career paths based on your skills and preferences. Furthermore, we provide a curated selection of premier companies, empowering you to make informed choices and secure opportunities with the best organizations.
                             </p>
                         </div>
-                        <Image height={100} width={200} src={"/career.svg"} className="w-full" />
+                        <Image height={100} width={200} src={"/career.svg"} alt='' className="w-full" />
                     </div>
                     <div className='flex items-center justify-start gap-10 sm:flex-col-reverse'>
-                        <Image height={100} width={200} src={"/job.svg"} className="w-full" />
+                        <Image height={100} width={200} src={"/job.svg"} alt='' className="w-full" />
                         <div className='flex flex-col gap-[2rem] sm:gap-[0.5rem]'>
                             <h2 className='text-[40px] font-semibold sm:text-[30px]'>Job Readiness</h2>
                             <p className='text-[16px] font-medium w-[956px] sm:w-full'>

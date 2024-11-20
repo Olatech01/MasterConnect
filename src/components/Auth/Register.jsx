@@ -83,11 +83,11 @@ const Register = () => {
     }
 
     return (
-        <div className='w-full flex bg-[#B1ADAD]'>
-            <div className='w-full flex h-screen flex-col gap-4 items-center justify-center px-[4rem]'>
-                <div className='flex-col gap-4 py-5 flex items-center justify-center bg-[#FFFFFF] rounded-lg w-[700px] min-h-[600px]'>
-                    <h2 className='text-[40px] font-semibold'>Create Your Account</h2>
-                    <form onSubmit={handleSubmit} className='w-full flex flex-col gap-3 px-[4rem]'>
+        <div className='w-full flex bg-[#B1ADAD] sm:min-h-full'>
+            <div className='w-full flex h-screen sm:py-5 sm:min-h-fit flex-col gap-4 items-center justify-center px-[4rem] sm:px-2'>
+                <div className='flex-col gap-4 py-5 flex items-center justify-center bg-[#FFFFFF] rounded-lg w-[700px] sm:w-full min-h-[600px] sm:min-h-fit'>
+                    <form onSubmit={handleSubmit} className='w-full flex flex-col gap-3 px-[4rem] sm:px-3'>
+                    <h2 className='text-[40px] sm:text-[24px] font-semibold'>Create Your Account</h2>
 
                         <div className='flex flex-col gap-2'>
                             <label className='text-[16px] font-medium'>Username</label>
@@ -177,7 +177,7 @@ const Register = () => {
                             </div>
                         </div>
 
-                        <div className='flex gap-4 w-full'>
+                        <div className='flex gap-4 w-full sm:flex-col'>
                             <div className='flex flex-col gap-2 w-full'>
                                 <label className='text-[16px] font-medium'>State</label>
                                 <input
@@ -221,7 +221,7 @@ const Register = () => {
                     </form>
                 </div>
             </div>
-            <div className='w-full h-screen'>
+            <div className='w-full h-screen sm:hidden'>
                 <Image
                     height={100}
                     width={100}

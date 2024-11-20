@@ -75,11 +75,11 @@ const Login = () => {
 
   return (
     <div className='w-full flex bg-[#B1ADAD]'>
-      <div className='w-full flex h-screen items-center justify-center px-[4rem]'>
-        <div className='flex-col gap-4 flex items-center justify-center bg-[#FFFFFF] rounded-lg w-[700px] min-h-[600px]'>
+      <div className='w-full flex h-screen sm:h-fit sm:py-5 items-center justify-center px-[4rem] sm:px-2'>
+        <div className='flex-col gap-4 flex items-center justify-center bg-[#FFFFFF] rounded-lg w-[700px] sm:w-full min-h-[600px]'>
           <h1 className='text-[20px] font-semibold'>Log into Your Account</h1>
-          <p className='text-[20px] font-normal'>Welcome Back! Select a method to Log In</p>
-          <div className='flex gap-10'>
+          <p className='text-[20px] font-normal sm:px-2 sm:text-[16px]'>Welcome Back! Select a method to Log In</p>
+          <div className='flex gap-10 sm:flex-col sm:gap-4'>
             <button className='flex items-center border-2 shadow-lg h-[40px] px-4'>
               <FcGoogle />
               <span className='ml-[2px] text-[14px] font-semibold'>Sign in with Google</span>
@@ -90,7 +90,7 @@ const Login = () => {
             </button>
           </div>
           <p>or continue with email</p>
-          <form onSubmit={handleSubmit} className='w-full flex flex-col gap-5 px-[4rem]'>
+          <form onSubmit={handleSubmit} className='w-full flex flex-col gap-5 px-[4rem] sm:px-2'>
             <div className='flex flex-col gap-2'>
               <label className='text-[16px] font-semibold'>Email</label>
               <input
@@ -142,7 +142,7 @@ const Login = () => {
           <p className='text-[14px] font-medium'>Don’t have an account? <span className='text-[#0057FF]'>Create New One</span></p>
         </div>
       </div>
-      <div className='w-full h-screen'>
+      <div className='w-full h-screen sm:hidden'>
         <Image
           height={100}
           width={100}

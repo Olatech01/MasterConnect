@@ -129,7 +129,7 @@ const RegisterCompany = () => {
                         </li>
                     ))}
                 </ul>
-                <Image height={100} width={200} src={"/reg.svg"} alt="" className="w-full" />
+                <Image height={100} width={200} src={"/reg.svg"} alt="true" className="w-full" />
             </div>
 
             <div className="flex-grow p-6">

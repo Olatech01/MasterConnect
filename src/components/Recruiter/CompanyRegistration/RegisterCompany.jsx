@@ -100,7 +100,11 @@ const RegisterCompany = () => {
                 }
             );
 
-            toast.success(response.data.message);
+            if(response.status === 200 || response.status === 201){
+                toast.success(response.data.message);
+            } else {
+                toast.error("Unexpected response from the server!");
+            }
         } catch (error) {
             // console.error("Error submitting form:", error);
             toast.error(error.response?.data?.error || "Something went wrong!");
@@ -219,7 +223,7 @@ const RegisterCompany = () => {
                                     <div className='flex flex-col gap-2'>
                                         <label className='text-[16px] font-medium'>Company Contact</label>
                                         <input
-                                            type="text"
+                                            type="tel"
                                             name="companyContact"
                                             value={formData.companyContact}
                                             onChange={handleChange}
@@ -261,6 +265,7 @@ const RegisterCompany = () => {
                                     <label className='text-[16px] font-medium'>Recruiter Name</label>
                                     <input
                                         type="text"
+                                        name="recruiterName"
                                         value={formData.recruiterName}
                                         onChange={handleChange}
                                         placeholder='Enter Recruiter Name Here'
@@ -271,6 +276,7 @@ const RegisterCompany = () => {
                                     <label className='text-[16px] font-medium'>Job Title</label>
                                     <input
                                         type="text"
+                                        name="jobTitle"
                                         value={formData.jobTitle}
                                         onChange={handleChange}
                                         placeholder='Enter Job Title Here'
@@ -282,6 +288,7 @@ const RegisterCompany = () => {
                                         <label className='text-[16px] font-medium'>Gender</label>
                                         <select
                                             value={formData.gender}
+                                            name="gender"
                                             onChange={handleChange}
                                             className='w-full px-2 py-2 border-2 rounded-md outline-none shadow-lg'>
                                             <option>Select Gender</option>
@@ -294,6 +301,7 @@ const RegisterCompany = () => {
                                         <label className='text-[16px] font-medium'>Age</label>
                                         <input
                                             type="tel"
+                                            name="age"
                                             value={formData.age}
                                             onChange={handleChange}
                                             placeholder='Enter Age Here'
@@ -314,6 +322,7 @@ const RegisterCompany = () => {
                                         <label className='text-[16px] font-medium'>Working Years</label>
                                         <input
                                             type="tel"
+                                            name="workingYears"
                                             value={formData.workingYears}
                                             onChange={handleChange}
                                             placeholder='Enter Working Years Here'
@@ -326,6 +335,7 @@ const RegisterCompany = () => {
                                         <label className='text-[16px] font-medium'>Email</label>
                                         <input
                                             type="email"
+                                            name="recruiterEmail"
                                             value={formData.recruiterEmail}
                                             onChange={handleChange}
                                             placeholder='Enter Email Here'
@@ -336,6 +346,7 @@ const RegisterCompany = () => {
                                         <label className='text-[16px] font-medium'>Linkedin <span className='opacity-30'>(Optional)</span></label>
                                         <input
                                             type="text"
+                                            name="linkedinProfile"
                                             value={formData.linkedinProfile}
                                             onChange={handleChange}
                                             placeholder='Enter Linkedin URL Here'
@@ -355,7 +366,8 @@ const RegisterCompany = () => {
                                     <div className='flex flex-col gap-2'>
                                         <label className='text-[16px] font-medium'>Personal Contact</label>
                                         <input
-                                            type="text"
+                                            type="tel"
+                                            name="personalContact"
                                             value={formData.personalContact}
                                             onChange={handleChange}
                                             placeholder='Enter Personal Contact Here'
@@ -410,7 +422,8 @@ const RegisterCompany = () => {
                                 <div className='flex flex-col gap-2'>
                                     <label className='text-[16px] font-medium'>Company Registration Number</label>
                                     <input
-                                        type="tell"
+                                        type="tel"
+                                        name="companyRegistrationNumber"
                                         value={formData.companyRegistrationNumber}
                                         onChange={handleChange}
                                         placeholder='Enter company registration number'
@@ -421,6 +434,7 @@ const RegisterCompany = () => {
                                     <label className='text-[16px] font-medium'>Tax Identification Number (TIN)</label>
                                     <input
                                         type="tel"
+                                        name="companyTaxIdentidicationNumber"
                                         value={formData.companyTaxIdentidicationNumber}
                                         onChange={handleChange}
                                         placeholder='Enter tax identification number'
@@ -477,6 +491,7 @@ const RegisterCompany = () => {
                                     <label className='text-[16px] font-medium'>Address</label>
                                     <input
                                         type="text"
+                                        name="companyAddress"
                                         value={formData.companyAddress}
                                         onChange={handleChange}
                                         placeholder="Enter Company residential address"
@@ -488,6 +503,7 @@ const RegisterCompany = () => {
                                         <label className='text-[16px] font-medium'>E-mail</label>
                                         <input
                                             type="email"
+                                            name="companyEmail"
                                             value={formData.companyEmail}
                                             onChange={handleChange}
                                             placeholder='Enter company official contact mail'
@@ -498,6 +514,7 @@ const RegisterCompany = () => {
                                         <label className='text-[16px] font-medium'>Company Size (In People)</label>
                                         <input
                                             type="tel"
+                                            name="companySize"
                                             value={formData.companySize}
                                             onChange={handleChange}
                                             placeholder='Enter no of People working in company'
@@ -511,6 +528,7 @@ const RegisterCompany = () => {
                                     <div className='flex gap-2 w-full'>
                                         <input
                                             type="text"
+                                            name="companyMedia"
                                             value={formData.companyMedia}
                                             onChange={handleChange}
                                             placeholder='Enter Social Media Name'

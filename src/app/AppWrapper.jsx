@@ -18,6 +18,11 @@ const AppWrapper = ({ children }) => {
         "/recruiter/hiring",
         "/recruiter/settings",
         "/recruiter/registerCompany",
+        "/candidate",
+        "/candidate/settings",
+        "/candidate/offers",
+        "/candidate/jobs",
+        "/candidate/activities",
         "/admin",
     ].includes(pathname);
 

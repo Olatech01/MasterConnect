@@ -49,7 +49,7 @@ const Login = () => {
       if (response.status === 200 || response.status === 201) {
         const { userType, username, token } = response.data.user;
 
-        logIn(token, username); 
+        logIn(token, username, userType); 
 
         toast.success("Login Successful!");
 
@@ -65,7 +65,7 @@ const Login = () => {
         toast.error("Invalid login credentials.");
       }
     } catch (error) {
-      toast.error("An error occurred during login. Please try again.");
+      toast.error("Failed to login");
     } finally {
       setIsLoading(false);
     }

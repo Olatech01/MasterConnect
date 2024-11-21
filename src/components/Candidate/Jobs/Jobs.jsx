@@ -1,10 +1,15 @@
+"use client"
+import { useRouter } from 'next/navigation';
 import React from 'react'
 import { SlLocationPin } from "react-icons/sl";
 
 
 const Jobs = () => {
+    const router = useRouter();
+
     const jobs = [
         {
+            id: 1,
             title: 'UX/UI Designer',
             companyName: "Linsible Technologies Private Limited",
             duration: '2 Months',
@@ -14,6 +19,7 @@ const Jobs = () => {
             location: 'Work from home'
         },
         {
+            id: 2,
             title: 'UX/UI Designer',
             companyName: "Linsible Technologies Private Limited",
             duration: '2 Months',
@@ -23,6 +29,7 @@ const Jobs = () => {
             location: 'Mumbai'
         },
         {
+            id: 3,
             title: 'UX/UI Designer',
             companyName: "Linsible Technologies Private Limited",
             duration: '2 Months',
@@ -32,6 +39,7 @@ const Jobs = () => {
             location: 'Work from home'
         },
         {
+            id: 4,
             title: 'UX/UI Designer',
             companyName: "Linsible Technologies Private Limited",
             duration: '2 Months',
@@ -41,12 +49,16 @@ const Jobs = () => {
             location: 'Uk'
         },
     ]
+
+    const handleViewDetails = (id) => {
+        router.push(`/candidate/jobs/${id}`);
+    };
     return (
         <div className='flex flex-col gap-[2rem]'>
             <h2 className="text-[20px] font-semibold">Jobs Available</h2>
             <div className="grid grid-cols-1 gap-4 ">
-                {jobs.map((job) => (
-                    <div className='flex flex-col gap-2 sm:gap-3 bg-white rounded-lg shadow-md py-3 px-4'>
+                {jobs.map((job, index) => (
+                    <div key={index} className='flex flex-col gap-2 sm:gap-3 bg-white rounded-lg shadow-md py-3 px-4'>
                         <div className='flex justify-between sm:flex-col sm:gap-3'>
                             <div className='flex flex-col gap-2'>
                                 <h3 className='text-[20px] font-semibold'>{job.title}</h3>
@@ -64,7 +76,10 @@ const Jobs = () => {
                             <p className='text-[16px]'>{job.jobType}</p>
                         </div>
                         <div className='flex justify-end gap-3'>
-                            <button className='border border-[#85AD84] w-[120px] text-[16px] font-semibold sm:w-full'>View Details</button>
+                            <button
+                                onClick={() => handleViewDetails(job.id)}
+                                className='border border-[#85AD84] w-[120px] text-[16px] font-semibold sm:w-full'
+                            >View Details</button>
                             <button className='h-[40px] shadow-lg bg-[#D8FFEF] text-[16px] font-semibold border sm:w-full border-[#85AD84] w-[120px]'>Apply Now</button>
                         </div>
                     </div>

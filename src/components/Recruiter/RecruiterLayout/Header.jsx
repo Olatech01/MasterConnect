@@ -45,7 +45,7 @@ const Header = ({ toggleSidebar }) => {
                         )}
                     </h2>
                     <div className='text-[10px] font-medium items-end'>
-                            <p>({userType?.userType})</p>
+                        <p>{userType?.userType}</p>
                     </div>
                 </div>
                 <div onClick={toggleDropdown} className='flex items-center gap-2'>

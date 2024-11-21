@@ -44,16 +44,16 @@ const Settings = () => {
         <div className='flex flex-col gap-7'>
             <h2 className='text-[40px] font-bold'>Settings</h2>
             <form className='shadow-lg flex flex-col gap-5 px-5 py-3 border'>
-                <div className='flex gap-7 items-center'>
+                <div className='flex gap-7 items-center sm:flex-col'>
                     <Image height={100} width={150} src={"/user.svg"} alt='' />
-                    <div>
+                    <div className='sm:w-full'>
                         <label className='text-[16px] font-semibold'>Username</label>
                         <input type='text'
                             placeholder='John Doe'
                             className='rounded-lg h-[43px] shadow-lg border-2 outline-none pl-3 w-full'
                         />
                     </div>
-                    <div>
+                    <div className='sm:w-full'>
                         <label className='text-[16px] font-semibold'>Email</label>
                         <input type='text'
                             placeholder='example@gmail.com'
@@ -61,30 +61,34 @@ const Settings = () => {
                         />
                     </div>
                 </div>
-                <div className='flex flex-col gap-4 w-1/2'>
+                <div className='flex flex-col gap-4 w-1/2 sm:w-full'>
                     <label className='text-[20px] font-medium'>Privacy and Security</label>
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center gap-2 sm:flex-col sm:w-full sm:items-start'>
                         <label className='text-[16px] font-semibold'>Password:</label>
-                        <input type='password'
-                            placeholder='Enter new password'
-                            className='rounded-lg h-[43px] shadow-lg border-2 outline-none pl-3 w-full'
-                        />
-                        <button onClick={handlePasswordChange} className='bg-[#3C4E70] rounded-full w-[158px] h-[40px] text-white'>Change</button>
+                        <div className='flex items-center gap-2 sm:w-full'>
+                            <input type='password'
+                                placeholder='Enter new password'
+                                className='rounded-lg h-[43px] shadow-lg border-2 outline-none pl-3 w-full'
+                            />
+                            <button onClick={handlePasswordChange} className='bg-[#3C4E70] rounded-full w-[158px] h-[40px] text-white'>Change</button>
+                        </div>
                     </div>
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center gap-2 sm:flex-col sm:items-start'>
                         <label className='text-[16px] font-semibold'>Contact:</label>
-                        <input type='password'
-                            placeholder='733xxxxx91'
-                            className='rounded-lg h-[43px] shadow-lg border-2 outline-none pl-3 w-full'
-                        />
-                        <button onClick={handleUpdate} className='bg-[#3C4E70] rounded-full w-[158px] h-[40px] text-white'>Update</button>
+                        <div className='flex items-center gap-2 sm:w-full'>
+                            <input type='password'
+                                placeholder='733xxxxx91'
+                                className='rounded-lg h-[43px] shadow-lg border-2 outline-none pl-3 w-full'
+                            />
+                            <button onClick={handleUpdate} className='bg-[#3C4E70] rounded-full w-[158px] h-[40px] text-white'>Update</button>
+                        </div>
                     </div>
                 </div>
-                <div className='flex flex-col gap-3'>
+                <div className='flex flex-col gap-3 w-1/2 sm:w-full'>
                     <h2 className='text-[20px] font-medium'>Notifications</h2>
                     <div className="">
                         <label className="flex justify-between items-center">
-                            <span className='text-[16px] font-normal'>Turn on Email Notifications for Receiving our mails at your Doorstep. </span>
+                            <span className='text-[16px] font-normal'>Turn on Email Notifications </span>
                             <ToggleSwitch
                                 isOn={emailNotifications}
                                 handleToggle={() => setEmailNotifications(!emailNotifications)}
@@ -93,7 +97,7 @@ const Settings = () => {
                     </div>
                     <div className="">
                         <label className="flex justify-between items-center">
-                            <span className='text-[16px] font-normal'>Turn on Desktop Notifications for Receiving our mails at your Doorstep. </span>
+                            <span className='text-[16px] font-normal'>Turn on Desktop Notifications </span>
                             <ToggleSwitch
                                 isOn={desktopNotifications}
                                 handleToggle={() => setDesktopNotifications(!desktopNotifications)}
@@ -102,7 +106,7 @@ const Settings = () => {
                     </div>
                     <div className="">
                         <label className="flex justify-between items-center">
-                            <span className='text-[16px] font-normal'>Turn on In-app Notifications for Receiving our mails at your Doorstep. </span>
+                            <span className='text-[16px] font-normal'>Turn on In-app Notifications </span>
                             <ToggleSwitch
                                 isOn={inAppNotifications}
                                 handleToggle={() => setInAppNotifications(!inAppNotifications)}

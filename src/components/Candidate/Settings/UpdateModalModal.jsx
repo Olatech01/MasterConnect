@@ -27,7 +27,7 @@ const UpdateModalModal = ({onClose}) => {
     }
     return (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
-            <div className='bg-[#FFFFFF] w-[35%] sm:w-[80%] md:w-[80%] flex flex-col gap-[15px] py-[20px] px-6 rounded-lg'>
+            <div className='bg-[#FFFFFF] w-[35%] sm:w-[95%] md:w-[80%] flex flex-col gap-[15px] py-[20px] px-6 rounded-lg'>
                 <h2 className='text-[20px] font-semibold'>Update Contact</h2>
                 <form className='flex flex-col gap-3'>
                     <div className='flex flex-col gap-2'>

@@ -44,7 +44,7 @@ const PasswordChangeModal = ({ onClose, email }) => {
     }
     return (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
-            <div className='bg-[#FFFFFF] w-[35%] sm:w-[80%] md:w-[80%] flex flex-col gap-[15px] py-[20px] px-6 rounded-lg'>
+            <div className='bg-[#FFFFFF] w-[35%] sm:w-[95%] md:w-[80%] flex flex-col gap-[15px] py-[20px] px-6 rounded-lg'>
                 <h2 className='text-[20px] font-semibold'>Change Password</h2>
                 <form onSubmit={handleSubmit} className='flex flex-col gap-3'>
                     <div className='flex flex-col gap-2'>
@@ -65,7 +65,7 @@ const PasswordChangeModal = ({ onClose, email }) => {
                             className='rounded-lg h-[43px] shadow-lg border-2 outline-none pl-3 w-full'
                         />
                     </div>
-                    <div className='flex justify-end gap-[10px]'>
+                    <div className='flex justify-end sm:justify-center gap-[10px]'>
                         <button onClick={onClose} type="button" className='text-[16px] font-semibold border border-[#1E3561] px-10 h-[40px] rounded-full text-[#1E3561]'>Cancel</button>
                         <button type="submit" className='text-[16px] font-semibold bg-[#1E3561] px-10 h-[40px] rounded-full text-white'>Change</button>
                     </div>

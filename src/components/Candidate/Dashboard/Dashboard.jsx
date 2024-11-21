@@ -23,11 +23,11 @@ const Dashboard = () => {
             <div>
                 <h1 className='text-[20px] font-semibold'>Dashboard</h1>
             </div>
-            <div className='bg-[#ECF8FF] min-h-[250px] w-full gap-[1rem] rounded-lg flex sm:flex-col px-[2rem] items-center'>
+            <div className='bg-[#ECF8FF] min-h-[250px] w-full gap-[1rem] rounded-lg sm:py-4 flex sm:flex-col px-[2rem] sm:items-start sm:px-3 items-center'>
                 <Image height={100} width={150} src={"/candidate.svg"} alt='' />
                 <div className='w-full flex flex-col gap-3'>
                     <h2 className='text-[20px] font-semibold'>Akhil Nishtala</h2>
-                    <div className='grid grid-cols-3 gap-4 w-full sm:grid-cols-2'>
+                    <div className='grid grid-cols-3 gap-4 w-full sm:grid-cols-1'>
                         <p className='text-[16px] font-medium'>Mail: <span className='font-semibold'>xyz123@gmail.com</span></p>
                         <p className='text-[16px] font-medium'>Interested Position: <span className='font-semibold'>UX/UI Designer</span></p>
                         <p className='text-[16px] font-medium'>Rating: xyz123@gmail.com</p>
@@ -44,23 +44,23 @@ const Dashboard = () => {
                     <h2 className='text-[20px] font-semibold'>Test Scores</h2>
                     <div className='border-2 rounded-lg px-3 min-h-[382px] flex flex-col gap-[2rem] py-[1rem]'>
                         <div className='flex items-center justify-between'>
-                            <h2 className='text-[20px] font-semibold'>Front-End Development</h2>
+                            <h2 className='text-[20px] font-semibold sm:text-[16px]'>Front-End Development</h2>
                             <p className='text-[14px] font-medium'>Magic Score: 96/100</p>
                         </div>
                         <div className='flex items-center justify-between'>
-                            <h2 className='text-[20px] font-semibold'>Back-End Development</h2>
+                            <h2 className='text-[20px] font-semibold sm:text-[16px]'>Back-End Development</h2>
                             <p className='text-[14px] font-medium'>Magic Score: 96/100</p>
                         </div>
                         <div className='flex items-center justify-between'>
-                            <h2 className='text-[20px] font-semibold'>Front-End Development</h2>
+                            <h2 className='text-[20px] font-semibold sm:text-[16px]'>Front-End Development</h2>
                             <p className='text-[14px] font-medium'>Magic Score: 96/100</p>
                         </div>
                         <div className='flex items-center justify-between'>
-                            <h2 className='text-[20px] font-semibold'>Back-End Development</h2>
+                            <h2 className='text-[20px] font-semibold sm:text-[16px]'>Back-End Development</h2>
                             <p className='text-[14px] font-medium'>Magic Score: 96/100</p>
                         </div>
                         <div className='flex items-center justify-between'>
-                            <h2 className='text-[20px] font-semibold'>Front-End Development</h2>
+                            <h2 className='text-[20px] font-semibold sm:text-[16px]'>Front-End Development</h2>
                             <p className='text-[14px] font-medium'>Magic Score: 96/100</p>
                         </div>
                     </div>
@@ -143,9 +143,9 @@ const Dashboard = () => {
                     <h2 className='text-[20px] font-semibold'>Internships</h2>
                     <div className='border-2 rounded-lg px-3 min-h-[502px] py-4'>
                         <div className='flex flex-col gap-2 border-b py-3'>
-                            <div className='flex justify-between'>
-                                <h2 className='text-[18px] font-semibold'>Front End Development  </h2>
-                                <p className='text-[18px] font-semibold'>27 Jun’ 2023 - Present</p>
+                            <div className='flex justify-between sm:flex-col sm:gap-2'>
+                                <h2 className='text-[18px] font-semibold sm:text-[16px]'>Front End Development  </h2>
+                                <p className='text-[18px] font-semibold sm:text-[16px]'>27 Jun’ 2023 - Present</p>
                             </div>
                             <h3 className='text-[16px] font-normal'>Linsible Technologies</h3>
                             <ul className='flex flex-col gap-2 list-disc px-3 text-[16px] font-normal'>
@@ -156,9 +156,9 @@ const Dashboard = () => {
                             </ul>
                         </div>
                         <div className='flex flex-col gap-2 py-3'>
-                            <div className='flex justify-between'>
-                                <h2 className='text-[18px] font-semibold'>Front End Development  </h2>
-                                <p className='text-[18px] font-semibold'>27 Jun’ 2023 - Present</p>
+                            <div className='flex justify-between sm:flex-col sm:gap-2'>
+                                <h2 className='text-[18px] font-semibold sm:text-[16px]'>Front End Development  </h2>
+                                <p className='text-[18px] font-semibold sm:text-[16px]'>27 Jun’ 2023 - Present</p>
                             </div>
                             <h3 className='text-[16px] font-normal'>Linsible Technologies</h3>
                             <ul className='flex flex-col gap-2 list-disc px-3 text-[16px] font-normal'>
@@ -199,7 +199,7 @@ const Dashboard = () => {
             </div>
             <div className=' flex flex-col gap-[20px] '>
                 <h2 className='text-[20px] font-semibold'>Certifications and Awards</h2>
-                <div className='grid grid-cols-3 gap-2 px-5'>
+                <div className='grid grid-cols-3 gap-2 px-5 sm:grid-cols-2'>
                     <Image height={100} width={200} src={'/gov1.svg'} alt='' className='w-full' />
                     <Image height={100} width={200} src={'/gov2.svg'} alt='' className='w-full' />
                     <Image height={100} width={200} src={'/gov1.svg'} alt='' className='w-full' />
